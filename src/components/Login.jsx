@@ -41,7 +41,9 @@ function Login() {
   return (
     <>
     {token && <Navigate to={"/listado"} /> }
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center align-items-center" style={{
+        margin:"3rem 0 3rem 0"
+      }}>
         <div className="my-2">
           <h1 className="display-6 text-center mb-4">Login</h1>
           <form onSubmit={submitHandler}>
