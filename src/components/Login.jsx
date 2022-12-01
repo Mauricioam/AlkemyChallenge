@@ -1,6 +1,8 @@
 import axios from "axios";
 import swal from "@sweetalert/with-react";
 import { useNavigate , Navigate } from "react-router-dom";
+import "../css/components/Login/login.css";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -41,10 +43,9 @@ function Login() {
   return (
     <>
     {token && <Navigate to={"/listado"} /> }
-      <div className="d-flex justify-content-center align-items-center" style={{
-        margin:"3rem 0 3rem 0"
-      }}>
-        <div className="my-2">
+      
+      <div className="login-container  d-flex justify-content-end align-items-center " style={{minHeight:"90vh"}} >
+        <div className="text-white" style={{marginRight:"10rem"}}>
           <h1 className="display-6 text-center mb-4">Login</h1>
           <form onSubmit={submitHandler}>
             <div className="d-flex flex-column">

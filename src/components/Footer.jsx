@@ -70,8 +70,7 @@ function Footer(){
 
 
   <div className="text-center p-4">
-    © 2021 Copyright:
-    <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    Hecho por <span className="fw-bold"><a href="https://www.linkedin.com/in/mauricio-agustin-murdoch-b1658073/" target="_blanck">Mauricio Murdoch</a></span>
   </div>
 </footer>
         </>

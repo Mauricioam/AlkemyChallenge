@@ -1,15 +1,80 @@
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import "../css/components/card.css"
-function Favoritos({addOrRemoveFav , favorites}){
+import "../css/components/Card/card.css";
+
+
+function Favoritos(){
 
     let token = sessionStorage.getItem("token");
+
+    const [favorites , setFavorites] = useState([]);
+
+    const getFavsInLocal = () => {
+      let favsInLocal = JSON.parse(localStorage.getItem("favs"));
+      
+      if(favsInLocal){
+        setFavorites(favsInLocal);
+      }
+
+    }
+    
+
+    useEffect(getFavsInLocal,[]);
+
+    let favMovies = localStorage.getItem("favs");
+
+    let tempFavMovies;
+  
+    if (favMovies === null) {
+      tempFavMovies = [];
+    } else {
+      tempFavMovies = JSON.parse(favMovies);
+    }
+
+    const addOrRemoveFav = (e) => {
+      const btn = e.currentTarget;
+      const parent = btn.parentElement;
+      const imgURL = parent.querySelector("img").src;
+      const title = parent.querySelector("h5").innerText;
+      const overview = parent.querySelector("p").innerText;
+      const movieId = btn.dataset.movieid;
+      const movieFav = {
+        imgURL,
+        title,
+        overview,
+        id: movieId,
+      };
+  
+      let movieIsinArray = tempFavMovies.find(
+        (movie) => movie.id === movieFav.id
+      );
+  
+      if (!movieIsinArray) {
+        tempFavMovies.push(movieFav);
+        console.log("se agregó");
+        localStorage.setItem("favs", JSON.stringify(tempFavMovies));
+        setFavorites(tempFavMovies);
+
+      } else {
+        let moviesLeft = tempFavMovies.filter(
+          (movie) => movie.id !== movieFav.id
+        );
+        console.log("borro");
+        localStorage.setItem("favs", JSON.stringify(moviesLeft));
+        setFavorites(moviesLeft);
+       
+     
+      }
+    };
+
+    
 
 
     return (
         <>
-        {!token && <Navigate to="/" /> }
+         {!token && <Navigate to="/" /> }
         {!favorites.length && <><div className="container-fluid" style={{minHeight:"60vh"}}><p className="fw-bold my-3">No tienes agregado favoritos.</p></div></>}
-        <div className="row my-5">
+        <div className="row my-5 d-flex justify-content-center">
         {favorites.map((movie,idx) => {
           return (
             <div className="col-3" key={idx}>
@@ -33,7 +98,7 @@ function Favoritos({addOrRemoveFav , favorites}){
           )
         })}
    
-      </div>
+      </div> 
         </>
     )
 };
