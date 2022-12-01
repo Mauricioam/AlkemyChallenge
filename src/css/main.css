@@ -1,8 +1,27 @@
 @import "./abstracts/bootstrap.min.css";
 
+
+/* Login componenet */
+@import "./components/Login/login.css";
+
+/* ------------------------------------ */
+
+/* Home */
+
+@import "./components/Home/bg-home.css";
+
+/* ------------------------------------ */
+
+
+/*    Card styles  */
 @import "./components/Card/card.css";
+
+/* Image size */
+
+@import "./components/Card/poster-img.css";
 
 @import "./components/Card/favoriteBtn.css";
 
-@import "./components/Login/login.css";
+/* ------------------------------------ */
+
 

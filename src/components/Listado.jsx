@@ -41,7 +41,8 @@ function Listado() {
       {/* Proteccion de ruta con token */}
       {!token && <Navigate to={"/"} />}
       {/* estructura basica  */}
-      <div className="row my-5 ">
+      <div className="home-container">
+      <div className=" row py-5 d-flex justify-content-center">
         { moviesList.length ? moviesList.map((movie, idx) => {
           return (
            <Card
@@ -55,6 +56,7 @@ function Listado() {
           );
         }): <Cargando/>}
         <Paginado page={page} setPage={setPage}/>
+      </div>
       </div>
     </>
   );

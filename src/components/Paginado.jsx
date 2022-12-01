@@ -14,7 +14,7 @@ function Paginado ({page,setPage}){
 
     return(
         <>
-        <div className="container d-flex justify-content-evenly w-25 my-5">
+        <div className="container d-flex justify-content-center  my-5 text-white">
             <a  onClick={getPrevPage}>{`<< Atras`}</a>
             <p>{page}</p>
             <a onClick={getNextPage}>{`Siguiente >>`}</a>
