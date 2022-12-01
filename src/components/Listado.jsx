@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
-import "../css/components/favoriteBtn.css";
-import "../css/components/Card/card.css";
 import Cargando  from "./Cargando";
 import  Card  from "./Card";
 import Paginado from "./Paginado";

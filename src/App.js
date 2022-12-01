@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Detalle  from "./components/Detalle";
 import Resultados from "./components/Resultados";
 import Favoritos from "./components/Favoritos";
-import "./css/abstracts/bootstrap.min.css"
+import "./css/main.css"
 
 function App() {
 

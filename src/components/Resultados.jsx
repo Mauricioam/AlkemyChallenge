@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
 import Card from "./Card";
-import "../css/components/favoriteBtn.css"
+
 
 function Resultados (){
 

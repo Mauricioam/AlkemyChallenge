@@ -1,0 +1,8 @@
+@import "./abstracts/bootstrap.min.css";
+
+@import "./components/Card/card.css";
+
+@import "./components/Card/favoriteBtn.css";
+
+@import "./components/Login/login.css";
+

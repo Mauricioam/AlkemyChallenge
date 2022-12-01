@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 function Card({ idx, id, poster, title, overview ,moviesList }) {
 
 const [heart,setHeart] = useState();
@@ -79,10 +80,7 @@ const addOrRemoveFav = (e) => {
   return (
     <>
       <div className="col-3 p-0 d-flex justify-content-center" key={idx}>
-        <div className=" card-size card mb-4 text-center" style={{
-          width:"15rem",
-          height:"35rem"
-        }}>
+        <div className="card  mb-4 text-center" >
           <button
             onClick={addOrRemoveFav}
             className="favorite-btn"
@@ -106,7 +104,7 @@ const addOrRemoveFav = (e) => {
             src={`https://image.tmdb.org/t/p/w185${poster}`}
             className="img-fluid-top"
             alt="poster_image"
-          />
+            />
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{overview.substring(0, 100)}...</p>
