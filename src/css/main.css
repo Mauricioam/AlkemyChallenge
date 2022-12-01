@@ -1,8 +1,16 @@
+
 @import "./abstracts/bootstrap.min.css";
 
+@import "./abstracts/variables.css";
 
 /* Login componenet */
 @import "./components/Login/login.css";
+
+/* ------------------------------------ */
+
+/* Header */
+
+@import "./components/Header/header-container.css";
 
 /* ------------------------------------ */
 
@@ -16,7 +24,7 @@
 /*    Card styles  */
 @import "./components/Card/card.css";
 
-/* Image size */
+@import "./components/Card/detail-button.css";
 
 @import "./components/Card/poster-img.css";
 

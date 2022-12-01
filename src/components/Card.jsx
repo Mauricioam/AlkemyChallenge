@@ -80,7 +80,7 @@ const addOrRemoveFav = (e) => {
   return (
     <>
       <div className=" col-sm-3 col-6 d-flex justify-content-center" key={idx}>
-        <div className="card mb-4 text-center" >
+        <div className="card mb-4" >
           <div className="card-body p-0">
           <button
             onClick={addOrRemoveFav}
@@ -106,10 +106,10 @@ const addOrRemoveFav = (e) => {
             className="poster-img"
             alt="poster_image"
             />
-            <div>
+            <div className="d-flex flex-column justify-content-center align-items-center p-3">
             <h5 className="card-title">{title}</h5>
-            <p className="card-text">{overview.substring(0, 70)}...</p>
-            <Link to={`/detalle?movieID=${id}`} className="btn btn-secondary">
+            <p className="card-text">{overview.substring(0, 40)}...</p>
+            <Link to={`/detalle?movieID=${id}`} className="detail-button btn btn-secondary">
               Detail
             </Link>
             </div>

@@ -5,9 +5,9 @@ import Buscador from "./Buscador";
 function Header() {
   return (
     <>
-      <header className="container-fluid p-0">
+      <header className="header-container container-fluid p-0">
         <div >
-      <nav className="bg-secondary d-flex justify-content-between ">
+      <nav className="d-flex justify-content-between ">
       <ul className="d-flex align-items-center mb-0" style={{listStyle:"none"}}>
         <li>
         <Link to={"/"} className="btn-link text-white fw-bold" style={{textDecoration:"none",color:"inherit",paddingRight:"5rem"}} >AlkeFlix</Link>
