@@ -6,20 +6,23 @@ import "../css/components/favoriteBtn.css";
 import "../css/components/Card/card.css";
 import Cargando  from "./Cargando";
 import  Card  from "./Card";
+import Paginado from "./Paginado";
 
 
 function Listado() {
   let token = sessionStorage.getItem("token");
-
-  const endPoint =
-    "https://api.themoviedb.org/3/discover/movie?api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES&page=1";
-
+  
   const [moviesList, setMoviesList] = useState([]);
-
-
-
-
+  
+  const [page , setPage] = useState(1);
+  
+  
+  
+  
   const getApiData = () => {
+    
+      const endPoint =
+       `https://api.themoviedb.org/3/discover/movie?api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES&page=${page}` ;
     axios
       .get(endPoint)
       /* LLamado solo del array con datos de las peliculas */
@@ -33,7 +36,7 @@ function Listado() {
   };
 
 
-  useEffect(getApiData, [setMoviesList]);
+  useEffect(getApiData, [page]);
 
   return (
     <>
@@ -53,6 +56,7 @@ function Listado() {
            moviesList={moviesList}/>
           );
         }): <Cargando/>}
+        <Paginado page={page} setPage={setPage}/>
       </div>
     </>
   );
