@@ -79,7 +79,10 @@ const addOrRemoveFav = (e) => {
   return (
     <>
       <div className="col-3 p-0 d-flex justify-content-center" key={idx}>
-        <div className=" card-size card mb-4 text-center">
+        <div className=" card-size card mb-4 text-center" style={{
+          width:"15rem",
+          height:"35rem"
+        }}>
           <button
             onClick={addOrRemoveFav}
             className="favorite-btn"
