@@ -79,7 +79,7 @@ const addOrRemoveFav = (e) => {
 
   return (
     <>
-      <div className=" col-sm-3 col-6 d-flex justify-content-center" key={idx}>
+      <div className=" col-sm-6 col-md-3 col-12 d-flex justify-content-center" key={idx}>
         <div className="card mb-4" >
           <div className="card-body p-0">
           <button
@@ -101,11 +101,13 @@ const addOrRemoveFav = (e) => {
               />
             </svg>
           </button>
+          <div className="container-fluid p-0">
           <img
             src={`https://image.tmdb.org/t/p/w185${poster}`}
-            className="poster-img"
+            className=" poster-img img-fluid-top"
             alt="poster_image"
             />
+            </div>
             <div className="d-flex flex-column justify-content-center align-items-center p-3">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{overview.substring(0, 40)}...</p>
