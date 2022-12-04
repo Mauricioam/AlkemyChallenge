@@ -35,25 +35,20 @@ function Detalle() {
       {!detail && <p>Cargando...</p>}
       {detail && (
         <>
-      <h5 className="text-center my-3">Título: {detail.name ? detail.name : detail.original_title}</h5>
-      <div className=" row">
-        <div className="col-sm-4 text-center mb-3">
-            <img src={`https://image.tmdb.org/t/p/w185${detail.poster_path}`} className="img-fluid" alt="poster_image"/>
+      <div className=" detail-container container">
+        <div className="row py-4">
+        <div className="col-md-4  d-flex align-items-center justify-content-center p-0">
+            <img src={`https://image.tmdb.org/t/p/w185${detail.poster_path}`}  alt="poster_image"/>
         </div>
-        <div className="col-sm-8">
+        <div className="detail-card col-md-7 my-sm-4 border" >
+        <h5 className="text-center my-3">Título: {detail.name ? detail.name : detail.original_title}</h5>
           <h4>Reseña:</h4>
           <p>{detail.overview}</p>
           <h5>Rating: <span>{detail.vote_average}</span></h5>
-          <h5>Generos:
-            <ul style={{ listStyle:"none"}}>
-             {detail.genres?.map((genero,idx) => (
-                <li key={idx}>{genero.name}</li>
-          ))}
-            </ul> 
-          </h5>
-
-       
-        </div>
+          <h5>Generos:</h5><span>{detail.genres?.map((genero,idx) => <p key={idx}>{genero.name}</p>)}</span>
+      
+          </div>
+          </div>
       </div>
       </>
 
