@@ -20,6 +20,11 @@
 
 /* ------------------------------------ */
 
+/* Detalle */
+
+@import "./components/Detalle/detail-container.css";
+
+/* ------------------------------------ */
 
 /*    Card styles  */
 @import "./components/Card/card.css";
@@ -32,9 +37,4 @@
 
 /* ------------------------------------ */
 
-/* Detalle */
-
-@import "./components/Detalle/detail-container.css"
-
-/* ------------------------------------ */
 
