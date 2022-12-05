@@ -42,16 +42,12 @@ const addOrRemoveFav = (e) => {
     const btn = e.currentTarget;
     const parent = btn.parentElement;
     const imgURL = parent.querySelector("img").src;
-    const title = parent.querySelector("h5").innerText;
-    const overview = parent.querySelector("p").innerText;
     const movieId = btn.dataset.movieid;
     const movieFav = {
       imgURL,
-      title,
-      overview,
       id: movieId,
     };
-    console.log(movieFav)
+  
     let movieIsinArray = tempFavMovies.find(
       (movie) => movie.id == movieFav.id
     );
@@ -81,12 +77,13 @@ const addOrRemoveFav = (e) => {
     <>
       <div className=" col-sm-6 col-md-3 col-12 d-flex justify-content-center" key={idx}>
         <div className="card mb-4" >
-          <div className="card-body p-0">
+         
           <button
             onClick={addOrRemoveFav}
             className="favorite-btn"
             data-movieid={id}
           >
+          
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -101,21 +98,17 @@ const addOrRemoveFav = (e) => {
               />
             </svg>
           </button>
-          <div className="container-fluid p-0">
+          <div className="poster-container container-fluid p-0">
+          <Link to={`/detalle?movieID=${id}`}>
+            
           <img
             src={`https://image.tmdb.org/t/p/w185${poster}`}
             className=" poster-img img-fluid-top"
             alt="poster_image"
             />
-            </div>
-            <div className="d-flex flex-column justify-content-center align-items-center p-3">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{overview.substring(0, 40)}...</p>
-            <Link to={`/detalle?movieID=${id}`} className="detail-button btn btn-secondary">
-              Detail
             </Link>
             </div>
-          </div>
+       
         </div>
       </div>
     </>

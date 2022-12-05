@@ -8,18 +8,14 @@ function Header() {
         <nav className="d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center ">
           <div>
             <ul
-              className="d-flex mb-md-0 mb-3"
-              style={{ listStyle: "none" }}
+              className="links-style d-flex flex-md-row flex-column mb-md-0 mb-3"
+              
             >
               <li>
                 <Link
                   to={"/"}
-                  className="btn-link text-white fw-bold fz-5"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    paddingRight: "5rem",
-                  }}
+                  className="btn-link text-white fw-bold fz-5 me-md-5"
+             
                 >
                   AlkeFlix
                 </Link>
@@ -27,11 +23,6 @@ function Header() {
               <li>
                 <Link
                   to={"/"}
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    paddingRight: "2rem",
-                  }}
                 >
                   Home
                 </Link>
@@ -39,11 +30,7 @@ function Header() {
               <li>
                 <Link
                   to={"/listado"}
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    paddingRight: "2rem",
-                  }}
+            
                 >
                   Listado
                 </Link>
