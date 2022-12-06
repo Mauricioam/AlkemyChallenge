@@ -33,7 +33,11 @@ function Login() {
    
      /* harcodeo sino no funciona en el deploy */
   
-        swal(<h2>Perfecto, ingresaste correctamente</h2>);
+        swal(<h4 className="text-white">Ingresaste correctamente</h4>,{
+          className:"sweet-alert",
+          button:false,
+          timer:3000
+        });
         const tokenRecibido = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJjaGFsbGVuZ2VAYWxrZW15Lm9yZyIsImlhdCI6MTUxNjIzOTAyMn0.ilhFPrG0y7olRHifbjvcMOlH7q2YwlegT0f4aSbryBE";
         sessionStorage.setItem("token", tokenRecibido);
         navigate("/listado");

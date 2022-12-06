@@ -6,11 +6,16 @@ function Buscador(){
 
     const navigate = useNavigate();
 
+
     const submmitHandler = (e) => {
         e.preventDefault();
         const keyword = e.currentTarget.keyword.value;
         if(keyword.length === 0){
-            swal("Ingresa una palabra")
+            swal(<h4 className="text-white">Ingresa una palabra</h4>,{
+                className:"sweet-alert-search",
+                button:true,
+           
+              });
         }  else {
             e.currentTarget.keyword.value = ""
             navigate(`/resultados?keyword=${keyword}`)

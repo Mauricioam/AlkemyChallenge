@@ -41,7 +41,7 @@ function Listado() {
       {/* Proteccion de ruta con token */}
       {!token && <Navigate to={"/"} />}
       {/* estructura basica  */}
-      <div className="home-container">
+      <div>
       <div className=" row py-5 d-flex justify-content-center">
         { moviesList.length ? moviesList.map((movie, idx) => {
           return (

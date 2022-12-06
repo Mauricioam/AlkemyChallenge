@@ -40,18 +40,18 @@ function Favoritos(){
         <>
          {!token && <Navigate to="/" /> }
         {!favorites.length && <><div className=" home-container container-fluid" style={{minHeight:"60vh"}}><p className="text-white fw-bold py-3">No tienes agregado favoritos.</p></div></>}
-        <div className="home-container row py-5 d-flex justify-content-center">
+        <div className=" row py-5 d-flex justify-content-center">
         {favorites.map((movie,idx) => {
           return (
-            <div className="col-md-3 col-sm-6" key={idx}>
-            <div className="card mx-2 mb-3 text-center card-size">
+            <div className="col-md-3 col-sm-6 d-flex justify-content-center" key={idx}>
+              <div className="mb-md-3 mb-sm-4 mb-4 card poster-container">
               <button onClick={addOrRemoveFav} className=" favorite-btn" data-movieID={movie.id}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                </svg>
               </button>
-              <img src={movie.imgURL} className="poster-img" alt="poster_image"/>
-            </div>
+              <img src={movie.imgURL}  alt="poster_image"/>
+              </div>
             </div>
 
           )

@@ -98,12 +98,11 @@ const addOrRemoveFav = (e) => {
               />
             </svg>
           </button>
-          <div className="poster-container container-fluid p-0">
+          <div className="container-fluid p-0">
           <Link to={`/detalle?movieID=${id}`}>
             
           <img
             src={`https://image.tmdb.org/t/p/w185${poster}`}
-            className=" poster-img img-fluid-top"
             alt="poster_image"
             />
             </Link>

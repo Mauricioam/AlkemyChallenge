@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
+import Cargando from "./Cargando";
 
 function Detalle() {
   const [detail, setDetail] = useState();
@@ -32,10 +33,10 @@ function Detalle() {
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      {!detail && <p>Cargando...</p>}
+      {!detail && <Cargando/>}
       {detail && (
         <>
-      <div className="detail-container container">
+      <div className=" detail-container container">
         <div className="row py-4">
         <div className="col- col-md-4  d-flex align-items-center justify-content-center p-0">
             <img src={`https://image.tmdb.org/t/p/w185${detail.poster_path}`}  alt="poster_image"/>

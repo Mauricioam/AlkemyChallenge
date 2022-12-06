@@ -15,7 +15,7 @@ function App() {
 
   return (
  <>
-<div className="container-fluid p-0">
+<div className="home-container container-fluid p-0">
  <Header/>
     <Routes>
       <Route exact path="/" element={<Login/>}/>

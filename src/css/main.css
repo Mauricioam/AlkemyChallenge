@@ -8,6 +8,12 @@
 
 /* ------------------------------------ */
 
+/* Swert Alert */
+
+@import "./components/Swal/sweet-alert.css";
+
+/* ------------------------------------ */
+
 /* Header */
 
 @import "./components/Header/header-container.css";

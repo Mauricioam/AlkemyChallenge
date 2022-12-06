@@ -16,11 +16,13 @@ function Resultados (){
     let query = new URLSearchParams(window.location.search);
     /* que mandamos por query */
     let keyword = query.get("keyword");
+
         
 
-    let endPoint = `https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES`
-
+    
     const getApiData = () => {
+
+      let endPoint = `https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES`
         axios
           .get(endPoint)
           /* LLamado solo del array con datos del detalle de peliculas */
@@ -33,13 +35,13 @@ function Resultados (){
           });
       };
 
-    useEffect(getApiData,[setResultado])
+    useEffect(getApiData)
       console.log(resultado)
 
     return (
-        <>
+        <div className="home-container">
         {!token && <Navigate to={"/"} />}
-           <h2 className="my-4">Buscaste: {keyword}</h2>
+           <h2 className="py-4">Buscaste: {keyword}</h2>
          <div className="row my-5" style={{minHeight:"80vh"}}>
           
         {resultado.map((movie,idx) => {
@@ -58,7 +60,7 @@ function Resultados (){
         })}
    
       </div>
-        </>
+        </div>
     )
 };
 
