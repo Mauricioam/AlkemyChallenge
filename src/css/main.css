@@ -1,6 +1,8 @@
 
 @import "./abstracts/bootstrap.min.css";
 
+
+
 @import "./abstracts/variables.css";
 
 /* Login componenet */
@@ -25,6 +27,10 @@
 /* Home */
 
 @import "./components/Home/bg-home.css";
+
+@import "./components/Home/Pagination/main-container.css";
+
+@import "./components/Home/Pagination/page-links.css";
 
 /* ------------------------------------ */
 

@@ -104,6 +104,7 @@ const addOrRemoveFav = (e) => {
           <img
             src={`https://image.tmdb.org/t/p/w185${poster}`}
             alt="poster_image"
+            className="poster-img"
             />
             </Link>
             </div>

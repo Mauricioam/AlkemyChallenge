@@ -8,7 +8,7 @@
 
 /* Mobile design */
 
-@media only screen and (max-width: 576px){
+@media (max-width: 576px){
     .detail-container{
         padding: 0 2rem 0 2rem;
     }

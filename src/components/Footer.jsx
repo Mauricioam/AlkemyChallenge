@@ -1,80 +1,28 @@
-
-
-function Footer(){
-    return (
-        <>
-<footer className="text-center text-lg-start bg-secondary pt-3 footer-size">
-  <section className="">
-    <div className="container text-center text-md-start mt-5">
-      <div className="row mt-3">
-        <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 className="text-uppercase fw-bold mb-4">
-            <i className="fas fa-gem me-3"></i>Company name
+function Footer() {
+  return (
+    <>
+      <footer className="home-container text-center text-lg-start bg-secondary pt-3 footer-size">
+        <div className="container text-center text-white py-2">
+          <h6>
+            Hecho con{" "}
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="red"
+                class="bi bi-suit-heart-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
+              </svg>
+            </span>{" "}
+            por <a className="main-link" href="https://www.linkedin.com/in/mauricio-agustin-murdoch-b1658073/" target="_blank">Mauricio Murdoch</a>
           </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
         </div>
-
-        <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 className="text-uppercase fw-bold mb-4">
-            Products
-          </h6>
-          <p>
-            <a href="#!" className="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">React</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">Vue</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">Laravel</a>
-          </p>
-        </div>
-
-        <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 className="text-uppercase fw-bold mb-4">
-          </h6>
-          <p>
-            <a href="#!" className="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" className="text-reset">Help</a>
-          </p>
-        </div>
-
-        <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i className="fas fa-envelope me-3"></i>
-            info@example.com
-          </p>
-          <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
-        </div>
-
-      </div>
-  
-    </div>
-  </section>
-
-
-  <div className="text-center p-4">
-    Hecho por <span className="fw-bold"><a href="https://www.linkedin.com/in/mauricio-agustin-murdoch-b1658073/" target="_blanck">Mauricio Murdoch</a></span>
-  </div>
-</footer>
-        </>
-    )
+      </footer>
+    </>
+  );
 }
 
 export default Footer;

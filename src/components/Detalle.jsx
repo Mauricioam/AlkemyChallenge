@@ -36,12 +36,12 @@ function Detalle() {
       {!detail && <Cargando/>}
       {detail && (
         <>
-      <div className=" detail-container container">
+      <div className=" detail-container container text-white">
         <div className="row py-4">
         <div className="col- col-md-4  d-flex align-items-center justify-content-center p-0">
             <img src={`https://image.tmdb.org/t/p/w185${detail.poster_path}`}  alt="poster_image"/>
         </div>
-        <div className="detail-card col- col-md-7 my-sm-4 border" >
+        <div className="detail-card col- col-md-7 my-sm-4 " >
         <h5 className="text-center my-3">Título: {detail.name ? detail.name : detail.original_title}</h5>
           <h4>Reseña:</h4>
           <p>{detail.overview}</p>

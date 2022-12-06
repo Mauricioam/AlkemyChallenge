@@ -36,7 +36,7 @@ function Resultados (){
       };
 
     useEffect(getApiData)
-      console.log(resultado)
+
 
     return (
         <div className="home-container">
