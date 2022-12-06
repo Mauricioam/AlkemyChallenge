@@ -9,24 +9,24 @@
  
 }
 .main-link:hover{
-    color:black;
+    color:red;  
     transition: 0.2s;
 }
 .main-link:active{
-    color:red;
+    color:black;
 }
 
 .secondary-link{
     text-decoration: none;
-    color: black;
+    color: antiquewhite;
     padding-right: 1rem;
 }
 
 .secondary-link:hover{
-    color: aliceblue;
+    color: rgba(209, 39, 33,75);
     transition: 0.2s;
 }
 
 .secondary-link:active{
-    color: red;
+    color: antiquewhite;
 }

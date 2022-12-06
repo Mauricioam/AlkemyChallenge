@@ -8,6 +8,8 @@
 /* Login componenet */
 @import "./components/Login/login.css";
 
+@import "./components/Login/login-card.css";
+
 /* ------------------------------------ */
 
 /* Swert Alert */

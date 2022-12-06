@@ -49,7 +49,7 @@ function Login() {
     {token && <Navigate to={"/listado"} /> }
       
       <div className="login-container  d-flex justify-content-md-end justify-content-center  align-items-center " >
-        <div className="text-white">
+        <div className="login-card border border-dark rounded  p-3">
           <h1 className="display-6 text-center mb-4">Login</h1>
           <form onSubmit={submitHandler}>
             <div className="d-flex flex-column">
