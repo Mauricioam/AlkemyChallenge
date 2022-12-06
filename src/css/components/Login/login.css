@@ -2,9 +2,35 @@
 .login-container{
   background-image: url("../../images/bg-img-2-login.png");
   background-repeat: no-repeat;
+  padding-right: 9rem;
   background-size: cover;
   background-position: top;
   min-height: 90vh;
+  
+}
+
+/* Mobile background */
+@media (max-width: 576px){
+  .login-container{
+    background-image: url("../../images/bg-img-2-login.png");
+    background-size: cover;
+    padding-right: 0rem;
+    background-position: left;
+    color: black;
+    
+    
+
+  }
+}
+
+@media (max-width: 400px) {
+  .login-container{
+    background-image: url("../../images/bg-img-2-login.png");
+    padding-right: 0rem;
+    background-size: cover;
+    background-position: left;
+    color: black;
+  }
   
 }
 

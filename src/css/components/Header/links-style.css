@@ -2,3 +2,31 @@
     list-style-type: none;
 
 }
+
+.main-link{
+    text-decoration: none;
+    color: aliceblue;
+ 
+}
+.main-link:hover{
+    color:black;
+    transition: 0.2s;
+}
+.main-link:active{
+    color:red;
+}
+
+.secondary-link{
+    text-decoration: none;
+    color: black;
+    padding-right: 1rem;
+}
+
+.secondary-link:hover{
+    color: aliceblue;
+    transition: 0.2s;
+}
+
+.secondary-link:active{
+    color: red;
+}

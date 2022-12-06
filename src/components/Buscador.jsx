@@ -19,12 +19,12 @@ function Buscador(){
 
     return(
         <div>
-        <form className="d-flex " onSubmit={submmitHandler}>
+        <form className="d-flex" onSubmit={submmitHandler}>
               <div>
               <input className=" my-2 form-control" type="text" name="keyword" placeholder="Buscar..." />
               </div>
               <div>
-              <button className=" btn btn-danger my-2" type="submit">
+              <button className=" btn btn-danger my-2 ms-2" type="submit">
                 Buscar
               </button>
               </div>

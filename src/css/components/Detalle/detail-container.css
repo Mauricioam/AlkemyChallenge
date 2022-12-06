@@ -1,4 +1,14 @@
- @media only screen and (max-width: 576px){
+
+
+
+
+
+
+
+
+/* Mobile design */
+
+@media only screen and (max-width: 576px){
     .detail-container{
         padding: 0 2rem 0 2rem;
     }
