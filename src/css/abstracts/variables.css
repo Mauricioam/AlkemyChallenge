@@ -1,5 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+
 :root{
     --bg-header:rgba(3, 0, 80, 0.786);
-    
+ 
     
 }

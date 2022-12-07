@@ -75,7 +75,7 @@ const addOrRemoveFav = (e) => {
 
   return (
     <>
-      <div className=" col-sm-6 col-md-3 col-12 d-flex justify-content-center" key={idx}>
+      <div className=" col-sm-6 col-md-3 col-12 d-flex justify-content-center p-0" key={idx}>
         <div className="card mb-4" >
          
           <button

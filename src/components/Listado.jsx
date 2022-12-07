@@ -42,7 +42,9 @@ function Listado() {
       {!token && <Navigate to={"/"} />}
       {/* estructura basica  */}
       <div>
-      <div className=" row py-5 d-flex justify-content-center">
+      <div className="row py-5 d-flex justify-content-center" style={{
+        width:"100%"
+      }}>
         { moviesList.length ? moviesList.map((movie, idx) => {
           return (
            <Card
