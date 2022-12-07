@@ -39,8 +39,11 @@ function Favoritos(){
     return (
         <>
          {!token && <Navigate to="/" /> }
-        {!favorites.length && <><div className=" home-container container-fluid" style={{minHeight:"90vh"}}><p className="text-white fw-bold py-3">No tienes agregado favoritos.</p></div></>}
-        <div className=" row py-5 d-flex justify-content-center"  style={{minHeight:"90vh"}}>
+        {!favorites.length && <><div className="container-fluid"><p className="text-white fw-bold py-3">No tienes agregado favoritos.</p></div></>}
+        <div style={{
+        minHeight:"90vh"
+        }}>
+        <div className=" row py-5 d-flex justify-content-center" >
         {favorites.map((movie,idx) => {
           return (
             <div className="col-md-3 col-sm-6 d-flex justify-content-center" key={idx}>
@@ -58,6 +61,7 @@ function Favoritos(){
         })}
    
       </div> 
+      </div>
         </>
     )
 };
