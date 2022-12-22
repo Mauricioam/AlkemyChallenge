@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import Header from "./Header";
 
 
 
@@ -38,6 +39,7 @@ function Favoritos(){
 
     return (
         <>
+        <Header/>
          {!token && <Navigate to="/" /> }
         {!favorites.length && <><div className="container-fluid"><p className="text-white fw-bold py-3">No tienes agregado favoritos.</p></div></>}
         <div style={{

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Buscador from "./Buscador";
+import Logout from "./Logout";
 
 function Header() {
   return (
@@ -39,8 +40,9 @@ function Header() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="d-flex">
             <Buscador />
+            <Logout/>
           </div>
         </nav>
       </header>

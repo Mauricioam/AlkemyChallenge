@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
 import Cargando from "./Cargando";
+import Header from "./Header";
 
 function Detalle() {
   const [detail, setDetail] = useState();
@@ -32,6 +33,7 @@ function Detalle() {
 
   return (
     <>
+    <Header/>
       {!token && <Navigate to={"/"} />}
       {!detail && <Cargando/>}
       {detail && (

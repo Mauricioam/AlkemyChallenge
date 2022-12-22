@@ -4,6 +4,7 @@ import axios from "axios";
 import swal from "@sweetalert/with-react";
 import Card from "./Card";
 import Paginado from "./Paginado";
+import Header from "./Header";
 
 
 function Resultados (){
@@ -44,6 +45,7 @@ function Resultados (){
     return (
         <div className="home-container">
         {!token && <Navigate to={"/"} />}
+         <Header/>
            <h2 className="p-3 text-white">Buscaste: {keyword}</h2>
          <div className="row my-5" style={{minHeight:"80vh",width:"100%"}}>
           

@@ -16,7 +16,6 @@ function App() {
   return (
  <>
 <div className="home-container container-fluid p-0">
- <Header/>
     <Routes>
       <Route exact path="/" element={<Login/>}/>
       <Route path="/listado" element={<Listado />}/>

@@ -5,6 +5,7 @@ import swal from "@sweetalert/with-react";
 import Cargando  from "./Cargando";
 import  Card  from "./Card";
 import Paginado from "./Paginado";
+import Header from "./Header";
 
 
 function Listado() {
@@ -38,6 +39,7 @@ function Listado() {
 
   return (
     <>
+      <Header/>
       {/* Proteccion de ruta con token */}
       {!token && <Navigate to={"/"} />}
       {/* estructura basica  */}
