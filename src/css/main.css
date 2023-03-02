@@ -45,8 +45,6 @@
 /*    Card styles  */
 @import "./components/Card/card.css";
 
-@import "./components/Card/detail-button.css";
-
 @import "./components/Card/poster-img.css";
 
 @import "./components/Card/favoriteBtn.css";

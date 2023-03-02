@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Footer from "./components/Footer";
 import "./css/main.css";
 import { Private_Routes } from "./routes";
+import Loader from "./components/Loader";
 const Home = lazy( ()=>import("./pages/Home")) ;
 const Login = lazy(()=> import("./components/Login"));
 const Detalle = lazy(()=> import("./components/Detalle"));
@@ -16,7 +17,7 @@ function App() {
   return (
  <>
 <div className="home-container container-fluid p-0">
-      <Suspense fallback={<h1 style={{fontSize:"15rem",textAlign:"center",color:"whitesmoke"}}>Cargando</h1>}>
+      <Suspense fallback={<Loader/>}>
     <Routes>
       <Route exact path="/" element={<Login/>}/>
       <Route path={Private_Routes.LISTADO} element={<Home/>}/>
