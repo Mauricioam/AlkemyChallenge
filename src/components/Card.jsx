@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
-function Card({ idx, id, poster, title, overview ,moviesList }) {
+function Card({ idx, id, poster }) {
 
 const [heart,setHeart] = useState();
 

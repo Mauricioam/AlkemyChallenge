@@ -1,45 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
-import axios from "axios";
-import swal from "@sweetalert/with-react";
 import Cargando  from "./Cargando";
-import  Card  from "./Card";
+import Card  from "./Card";
 import Paginado from "./Paginado";
-import Header from "./Header";
+import { useMovies } from "../hooks/useMovies";
 
 
 function Listado() {
   let token = sessionStorage.getItem("token");
-  
-  const [moviesList, setMoviesList] = useState([]);
-  
   const [page , setPage] = useState(1);
-  
-  
-  
-  
-  const getApiData = () => {
-    
-      const endPoint =
-       `https://api.themoviedb.org/3/discover/movie?api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES&page=${page}` ;
-    axios
-      .get(endPoint)
-      /* LLamado solo del array con datos de las peliculas */
-      .then((response) => {
-        const apiData = response.data;
-        setMoviesList(apiData.results);
-      })
-      .catch((error) => {
-        swal("Hubo un error intenta mas tarde");
-      });
-  };
-
-
-  useEffect(getApiData, [page]);
+  const { moviesList } = useMovies(page);
+ 
 
   return (
     <>
-      <Header/>
       {/* Proteccion de ruta con token */}
       {!token && <Navigate to={"/"} />}
       {/* estructura basica  */}
@@ -47,16 +21,15 @@ function Listado() {
       <div className="row py-5 d-flex justify-content-center" style={{
         width:"100%"
       }}>
-        { moviesList.length ? moviesList.map((movie, idx) => {
+        { moviesList.length ? moviesList.map((movie) => {
           return (
            <Card
-           key={idx}
-           idx={idx}
+           key={movie.id}
            id={movie.id}
-           poster={movie.poster_path}
+           poster={movie.image}
            title={movie.title}
            overview={movie.overview}
-           moviesList={moviesList}/>
+           />
           );
         }): <Cargando/>}
         <Paginado page={page} setPage={setPage}/>

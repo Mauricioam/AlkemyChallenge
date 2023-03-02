@@ -1,28 +1,30 @@
 import { Routes ,Route} from "react-router-dom"
-import Login from "./components/Login";
-import Listado from "./components/Listado.jsx";
-import Header from "./components/Header";
+import { lazy, Suspense } from "react";
 import Footer from "./components/Footer";
-import Detalle  from "./components/Detalle";
-import Resultados from "./components/Resultados";
-import Favoritos from "./components/Favoritos";
-import "./css/main.css"
+import "./css/main.css";
+import { Private_Routes } from "./routes";
+const Home = lazy( ()=>import("./pages/Home")) ;
+const Login = lazy(()=> import("./components/Login"));
+const Detalle = lazy(()=> import("./components/Detalle"));
+const Favoritos = lazy(()=> import("./components/Favoritos"));
+const Resultados = lazy(()=> import("./components/Resultados"));
+
+
+/* poner lazy loading lo q no se usa al abrir la pagina */
 
 function App() {
-
-
-  
-
   return (
  <>
 <div className="home-container container-fluid p-0">
+      <Suspense fallback={<h1 style={{fontSize:"15rem",textAlign:"center",color:"whitesmoke"}}>Cargando</h1>}>
     <Routes>
       <Route exact path="/" element={<Login/>}/>
-      <Route path="/listado" element={<Listado />}/>
-      <Route path="/detalle" element={<Detalle/>}/>
-      <Route path="/resultados" element={<Resultados  />}/>
-      <Route path="/favoritos" element={<Favoritos/>}/>
+      <Route path={Private_Routes.LISTADO} element={<Home/>}/>
+      <Route path={Private_Routes.DETALLE} element={<Detalle/>}/>
+      <Route path={Private_Routes.RESULTADOS} element={<Resultados  />}/>
+      <Route path={Private_Routes.FAVORITOS} element={<Favoritos/>}/>
     </Routes>
+      </Suspense>
     <Footer/>
     </div>
  </>
