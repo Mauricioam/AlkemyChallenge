@@ -6,7 +6,7 @@ import Header from "./Header";
 
 function Favoritos(){
 
-    let token = sessionStorage.getItem("token");
+   
 
     const [favorites , setFavorites] = useState([]);
 
@@ -27,20 +27,17 @@ function Favoritos(){
     const addOrRemoveFav = (e) => {
       e.preventDefault();
       let id = e.currentTarget.dataset.movieid;
-      console.log(favsInLocal,"local");
       let moviesLeft = favsInLocal.filter(m => m.id !== id )
       localStorage.setItem("favs",JSON.stringify(moviesLeft));
       setFavorites(moviesLeft);
       
     };
 
-    console.log()
 
 
     return (
         <>
-        <Header/>
-         {!token && <Navigate to="/" /> }
+       
         {!favorites.length && <><div className="container-fluid"><p className="text-white fw-bold py-3">No tienes agregado favoritos.</p></div></>}
         <div style={{
         minHeight:"90vh"
@@ -58,7 +55,6 @@ function Favoritos(){
               <img className="poster-img" src={movie.imgURL}  alt="poster_image"/>
               </div>
             </div>
-
           )
         })}
    

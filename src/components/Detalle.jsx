@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
 import axios from "axios";
 import swal from "@sweetalert/with-react";
-import Cargando from "./Cargando";
-import Header from "./Header";
+
+
 
 function Detalle() {
   const [detail, setDetail] = useState();
 
-  let token = sessionStorage.getItem("token");
+
 
   let query = new URLSearchParams(window.location.search);
   /* ID que mandamos por query */
@@ -33,9 +32,7 @@ function Detalle() {
 
   return (
     <>
-    <Header/>
-      {!token && <Navigate to={"/"} />}
-      {!detail && <Cargando/>}
+    
       {detail && (
         <>
       <div className="detail-container container text-white">

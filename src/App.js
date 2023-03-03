@@ -4,10 +4,12 @@ import Footer from "./components/Footer";
 import "./css/main.css";
 import { Private_Routes } from "./routes";
 import Loader from "./components/Loader";
+import AuthGuard from "./components/AuthGuard";
+import LoginPage from "./pages/LoginPage";
+
 const Home = lazy( ()=>import("./pages/Home")) ;
-const Login = lazy(()=> import("./components/Login"));
-const Detalle = lazy(()=> import("./components/Detalle"));
-const Favoritos = lazy(()=> import("./components/Favoritos"));
+const Detail = lazy(()=> import("./components/Detalle"));
+const Favorites = lazy(()=> import("./pages/Favorites"));
 const Resultados = lazy(()=> import("./components/Resultados"));
 
 
@@ -19,11 +21,13 @@ function App() {
 <div className="home-container container-fluid p-0">
       <Suspense fallback={<Loader/>}>
     <Routes>
-      <Route exact path="/" element={<Login/>}/>
+      <Route exact path="/" element={<LoginPage/>}/>
+      <Route element={<AuthGuard/>}>
       <Route path={Private_Routes.LISTADO} element={<Home/>}/>
-      <Route path={Private_Routes.DETALLE} element={<Detalle/>}/>
+      <Route path={Private_Routes.DETALLE} element={<Detail/>}/>
       <Route path={Private_Routes.RESULTADOS} element={<Resultados  />}/>
-      <Route path={Private_Routes.FAVORITOS} element={<Favoritos/>}/>
+      <Route path={Private_Routes.FAVORITOS} element={<Favorites/>}/>
+      </Route>
     </Routes>
       </Suspense>
     <Footer/>

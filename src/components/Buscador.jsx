@@ -6,7 +6,7 @@ import { useSearch } from "../hooks/useSearch";
 function Buscador() {
   const navigate = useNavigate();
   const { search, setSearch, error } = useSearch();
-  const { getSearchResult } = useMovies();
+  const { getSearchResult } = useMovies(search);
 
   const submmitHandler = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ function Buscador() {
     } else {
       e.currentTarget.keyword.value = "";
       navigate(`/resultados?keyword=${search}`);
-      getSearchResult(search)
+      getSearchResult();
     }
   };
 

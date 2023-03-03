@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Buscador from "./Buscador";
 import Logout from "./Logout";
+import { Private_Routes } from "../routes";
 
 function Header() {
   return (
@@ -32,7 +33,7 @@ function Header() {
         
               <li>
                 <Link
-                  to={"/favoritos"}
+                  to={Private_Routes.FAVORITOS}
                   className="secondary-link"
                 >
                   Favoritos

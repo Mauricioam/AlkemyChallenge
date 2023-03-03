@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 const API_KEY = "a0f3bb61ecf1b015b1381fecd6742e7b"
 
 
-export function useMovies (page){
+export function useMovies (search){
     const [moviesList, setMoviesList] = useState([]);
+    const [moviesFound, setMoviesFound] = useState([]);
+
     
     const getApiData = () => {
       
@@ -31,7 +33,7 @@ export function useMovies (page){
           swal("Hubo un error intenta mas tarde");
         });
     };
-  
+    
   
     useEffect(() => {
       getApiData()
@@ -44,9 +46,9 @@ export function useMovies (page){
 
 
 
-    const getSearchResult = (keyword,page) => {
+    const getSearchResult = () => {
      
-      let endPoint = `https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=${API_KEY}&language=es-ES&page=${page}`
+      let endPoint = `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=${API_KEY}&language=es-ES`
       axios
         .get(endPoint)
         /* LLamado solo del array con datos del detalle de peliculas */
@@ -59,12 +61,12 @@ export function useMovies (page){
             image: movie.poster_path,
             rating: movie.vote_average
          }));
-         return { moviesList : movies}
+         setMoviesFound(movies);
         })
         .catch((error) => {
           swal("No pudimos encontrar lo que buscabas, intenta nuevamente");
         });
     }
     
-  return { moviesList, getSearchResult };
+  return { moviesList, getSearchResult, moviesFound };
 }
