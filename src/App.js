@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage";
 const Home = lazy( ()=>import("./pages/Home")) ;
 const Detail = lazy(()=> import("./components/Detalle"));
 const Favorites = lazy(()=> import("./pages/Favorites"));
-const Resultados = lazy(()=> import("./components/Resultados"));
+const SearchResults = lazy(()=> import("./pages/SearchResults"));
 
 
 /* poner lazy loading lo q no se usa al abrir la pagina */
@@ -25,7 +25,7 @@ function App() {
       <Route element={<AuthGuard/>}>
       <Route path={Private_Routes.LISTADO} element={<Home/>}/>
       <Route path={Private_Routes.DETALLE} element={<Detail/>}/>
-      <Route path={Private_Routes.RESULTADOS} element={<Resultados  />}/>
+      <Route path={Private_Routes.RESULTADOS} element={<SearchResults  />}/>
       <Route path={Private_Routes.FAVORITOS} element={<Favorites/>}/>
       </Route>
     </Routes>

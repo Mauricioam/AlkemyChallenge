@@ -1,16 +1,20 @@
-import React from 'react';
-import Header from './Header';
-import { useSearch } from '../hooks/useSearch';
+import React, { createContext } from "react";
+import { useSearch } from "../hooks/useSearch";
+import Header from "./Header";
 
-function Layout({children}) {
+export const SearchContext = createContext(null);
 
+function Layout({ children }) {
+  const { search, setSearch, error } = useSearch();
 
   return (
-    <div>
-        <Header  />
+    <SearchContext.Provider value={{search, setSearch, error}}>
+      <div>
+        <Header />
         {children}
-    </div>
-  )
+      </div>
+    </SearchContext.Provider>
+  );
 }
 
 export default Layout;

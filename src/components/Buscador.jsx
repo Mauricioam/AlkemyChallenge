@@ -1,30 +1,29 @@
 import swal from "@sweetalert/with-react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useMovies } from "../hooks/useMovies";
 import { useSearch } from "../hooks/useSearch";
+import { SearchContext } from "./Layout";
 
 function Buscador() {
   const navigate = useNavigate();
-  const { search, setSearch, error } = useSearch();
-  const { getSearchResult } = useMovies(search);
-
+  const provider = useContext(SearchContext)
+ 
   const submmitHandler = (e) => {
     e.preventDefault();
-    if (error) {
-      swal(<h4 className="text-white">{error}</h4>, {
+    if (provider.error) {
+      swal(<h4 className="text-white">{provider.error}</h4>, {
         className: "sweet-alert-search",
         button: true,
       });
     } else {
       e.currentTarget.keyword.value = "";
-      navigate(`/resultados?keyword=${search}`);
-      getSearchResult();
+      navigate(`/resultados?keyword=${provider.search}`);
     }
   };
 
   const handleChangeInput = (e) => {
     const keywordSearch = e.target.value;
-    setSearch(keywordSearch);
+    provider.setSearch(keywordSearch);
   };
 
   return (
@@ -34,7 +33,7 @@ function Buscador() {
           <input
             onChange={handleChangeInput}
             className=" my-2 form-control"
-            value={search}
+            value={provider.search}
             type="text"
             name="keyword"
             placeholder="Buscar..."

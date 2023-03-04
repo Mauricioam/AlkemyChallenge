@@ -33,12 +33,12 @@ function Listado({movies}) {
 
 function Home() {
 
-const { moviesList, moviesFound } = useMovies();
-  console.log(moviesFound,"home")
+const { moviesList } = useMovies();
+ 
   return (
     <div>
         <Layout>
-        {moviesList ? <Listado movies={moviesList}/> : <SearchResults/>}
+         <Listado movies={moviesList}/> 
         </Layout>
     </div>
   )
