@@ -3,25 +3,25 @@ import { useState, useEffect } from "react";
 import { getMovies, getSearchMovies } from "../services/movies";
 
 
-export function useMovies() {
+export function useMovies(page) {
   const [moviesList, setMoviesList] = useState([]);
   const [moviesFound, setMoviesFound] = useState([]);
 
   const getAllMovies = async () => {
     try {
-      const allMovies = await getMovies();
+      const allMovies = await getMovies(page);
       setMoviesList(allMovies);
     } catch (error) {
       swal("Hubo un error intenta mas tarde");
     }
   };
-
   useEffect(() => {
-    getAllMovies();
-   
-
-    return () => {};
-  }, []);
+    getAllMovies()
+    return () => {
+      
+    }
+  }, [page])
+  
 
   const getSearchResult = async (keyword) => {
     try {
@@ -32,5 +32,5 @@ export function useMovies() {
     }
   };
   
-  return { moviesList, moviesFound, getSearchResult };
+  return { moviesList, moviesFound, getSearchResult, getAllMovies };
 }

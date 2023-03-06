@@ -10,7 +10,6 @@ function Detalle() {
 
 
   let query = new URLSearchParams(window.location.search);
-  /* ID que mandamos por query */
   let movieID = query.get("movieID");
 
   let endPoint = `https://api.themoviedb.org/3/movie/${movieID}?api_key=a0f3bb61ecf1b015b1381fecd6742e7b&language=es-ES`;

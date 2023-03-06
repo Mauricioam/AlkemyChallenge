@@ -12,4 +12,4 @@ function AuthGuard() {
   )
 }
 
-export default AuthGuard
+export default AuthGuard;

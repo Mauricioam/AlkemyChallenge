@@ -10,7 +10,7 @@ function Buscador() {
   const provider = useContext(SearchContext)
 
   /* ver como reiniciar el input */
-  const inputRef = useRef();
+
 
   const submmitHandler = (e) => {
     e.preventDefault();
@@ -22,7 +22,8 @@ function Buscador() {
     } else {
       const keyword = provider.search
       provider.getSearchResult(keyword)
-      navigate(`${Private_Routes.RESULTADOS}&keyword=${provider.search}`)
+      sessionStorage.setItem("keyword",keyword);
+      navigate(Private_Routes.RESULTADOS)
   
     }
   };
@@ -34,7 +35,7 @@ function Buscador() {
 
   return (
     <div>
-      <form ref={inputRef}  className="d-flex" onSubmit={submmitHandler}>
+      <form   className="d-flex" onSubmit={submmitHandler}>
         <div>
           <input
             onChange={handleChangeInput}

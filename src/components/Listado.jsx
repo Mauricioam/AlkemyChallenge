@@ -1,6 +1,7 @@
 import Card from "./Card";
 
  function Listado({movies}) {
+ 
     return (
       <>
         {/* estructura basica  */}

@@ -1,5 +1,5 @@
 import { Routes ,Route} from "react-router-dom"
-import { createContext, lazy, Suspense } from "react";
+import { createContext, lazy, Suspense, useState } from "react";
 import Footer from "./components/Footer";
 import "./css/main.css";
 import { Private_Routes } from "./routes";
@@ -19,11 +19,12 @@ export const SearchContext = createContext(null);
 
 function App() {
   const { search, setSearch, error } = useSearch();
-  const { getSearchResult, moviesFound} = useMovies()
+  const [page, setPage] = useState(1)
+  const { getSearchResult, moviesFound, moviesList} = useMovies(page);
   return (
  <>
 <div className="home-container container-fluid p-0">
-      <SearchContext.Provider value={{search,setSearch,error,getSearchResult,moviesFound}}>
+      <SearchContext.Provider value={{ search,setSearch,error,getSearchResult,moviesFound, moviesList,setPage,page }}>
       <Suspense fallback={<Loader/>}>
     <Routes>
       <Route exact path="/" element={<LoginPage/>}/>

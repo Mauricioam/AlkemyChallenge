@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Buscador from "./Buscador";
 import Logout from "./Logout";
 import { Private_Routes } from "../routes";
+import { useLocation } from 'react-router-dom';
 
 const headerItems = [{
   title:"AlkeFlix",
@@ -18,7 +19,10 @@ const headerItems = [{
   linkTo:Private_Routes.FAVORITOS,
   style:"secondary-link"
 }]
+
+
 function Header() {
+
   return (
     <>
       <header className="header-container container-fluid ">
