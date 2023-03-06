@@ -5,9 +5,7 @@ import Layout from '../components/Layout'
 function Favorites() {
   return (
     <div>
-        <Layout>
         <Favoritos/>
-        </Layout>
     </div>
   )
 }

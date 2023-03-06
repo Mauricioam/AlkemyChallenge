@@ -1,43 +1,21 @@
-import { useContext, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import Card from "./Card";
+import { useContext, useEffect, useRef, useState } from "react";
 import Paginado from "./Paginado";
-import { useMovies } from "../hooks/useMovies";
-import { SearchContext } from "./Layout";
-
+import { SearchContext } from "../App";
+import Listado from "./Listado";
+import NoResults from "./NoResults";
 
 
 function Resultados (){
-  const provider = useContext(SearchContext)
-const { getSearchResult, moviesFound } = useMovies();
-
-useEffect(() => {
-  getSearchResult(provider.search)
-}, [provider.search])
-
-
+  const provider = useContext(SearchContext);
+  const keyword = provider.search;
 
     return (
      
         <div className="home-container">
      
-           <h2 className="p-3 text-white">Buscaste: {provider.search}</h2>
+           <h2 className="p-3 text-white">Buscaste: {keyword}</h2>
          <div className="row my-5" style={{minHeight:"80vh",width:"100%"}}>
-          
-       {/*  {resultado.map((movie,idx) => {
-          return (
-            <>
-               <Card
-           key={idx}
-           idx={idx}
-           id={movie.id}
-           poster={movie.poster_path}
-           title={movie.title}
-           overview={movie.overview}
-          />
-            </>
-          )
-        })} */}
+          {provider.moviesFound.length > 1 ? <Listado movies={provider.moviesFound}/> :  <NoResults/> }
       {/*   <Paginado page={page} setPage={setPage}/> */}
       </div>
 

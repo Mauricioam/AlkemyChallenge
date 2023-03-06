@@ -1,13 +1,17 @@
 import swal from "@sweetalert/with-react";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSearch } from "../hooks/useSearch";
-import { SearchContext } from "./Layout";
+import { SearchContext } from "../App";
+import { Private_Routes } from "../routes";
+
 
 function Buscador() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const provider = useContext(SearchContext)
- 
+
+  /* ver como reiniciar el input */
+  const inputRef = useRef();
+
   const submmitHandler = (e) => {
     e.preventDefault();
     if (provider.error) {
@@ -16,8 +20,10 @@ function Buscador() {
         button: true,
       });
     } else {
-      e.currentTarget.keyword.value = "";
-      navigate(`/resultados?keyword=${provider.search}`);
+      const keyword = provider.search
+      provider.getSearchResult(keyword)
+      navigate(`${Private_Routes.RESULTADOS}&keyword=${provider.search}`)
+  
     }
   };
 
@@ -28,7 +34,7 @@ function Buscador() {
 
   return (
     <div>
-      <form className="d-flex" onSubmit={submmitHandler}>
+      <form ref={inputRef}  className="d-flex" onSubmit={submmitHandler}>
         <div>
           <input
             onChange={handleChangeInput}

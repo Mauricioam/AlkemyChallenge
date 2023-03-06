@@ -32,7 +32,6 @@ function Detalle() {
 
   return (
     <>
-    
       {detail && (
         <>
       <div className="detail-container container text-white">

@@ -18,18 +18,19 @@ export function useMovies() {
 
   useEffect(() => {
     getAllMovies();
+   
 
     return () => {};
   }, []);
 
-  const getSearchResult = (keyword) => {
+  const getSearchResult = async (keyword) => {
     try {
-      const searchedMovie = getSearchMovies(keyword);
+      const searchedMovie = await getSearchMovies(keyword);
       setMoviesFound(searchedMovie);
     } catch (error) {
       swal("No pudimos encontrar lo que buscabas, intenta nuevamente");
     }
   };
-
+  
   return { moviesList, moviesFound, getSearchResult };
 }

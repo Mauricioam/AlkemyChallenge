@@ -48,7 +48,6 @@ function Card({ idx, id, poster }) {
       tempFavMovies.push(movieFav);
 
       localStorage.setItem("favs", JSON.stringify(tempFavMovies));
-      console.log(tempFavMovies, "movies add");
       setFavorites(tempFavMovies);
       setHeart(true);
     } else {

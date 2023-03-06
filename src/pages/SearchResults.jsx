@@ -5,9 +5,7 @@ import Resultados from '../components/Resultados';
 function SearchResults() {
   return (
     <div>
-        <Layout>
-        <Resultados/>
-        </Layout>
+        <Resultados/> 
     </div>
   )
 }
