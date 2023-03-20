@@ -4,6 +4,7 @@ import { getMovies, getSearchMovies } from "../services/movies";
 
 
 export function useMovies(page) {
+  console.log("executed");
   const [moviesList, setMoviesList] = useState([]);
   const [moviesFound, setMoviesFound] = useState([]);
 
@@ -15,14 +16,8 @@ export function useMovies(page) {
       swal("Hubo un error intenta mas tarde");
     }
   };
-  useEffect(() => {
-    getAllMovies()
-    return () => {
-      
-    }
-  }, [page])
   
-
+  
   const getSearchResult = async (keyword) => {
     try {
       const searchedMovie = await getSearchMovies(keyword,page);
@@ -31,6 +26,15 @@ export function useMovies(page) {
       swal("No pudimos encontrar lo que buscabas, intenta nuevamente");
     }
   };
+  useEffect(() => {
+    getAllMovies()
+    getSearchResult();
+    return () => {
+      
+    }
+  }, [page])
+
+
   
   return { moviesList, moviesFound, getSearchResult, getAllMovies };
 }

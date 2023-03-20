@@ -1,5 +1,5 @@
 import swal from "@sweetalert/with-react";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../App";
 import { Private_Routes } from "../routes";
@@ -8,12 +8,14 @@ import { Private_Routes } from "../routes";
 function Buscador() {
   const navigate = useNavigate()
   const provider = useContext(SearchContext)
-
+  const previousSearch = useRef(provider.search);
   /* ver como reiniciar el input */
 
 
   const submmitHandler = (e) => {
     e.preventDefault();
+    if(previousSearch.current === provider.search) return
+
     if (provider.error) {
       swal(<h4 className="text-white">{provider.error}</h4>, {
         className: "sweet-alert-search",
@@ -21,6 +23,7 @@ function Buscador() {
       });
     } else {
       const keyword = provider.search
+      previousSearch.current = provider.search;
       provider.getSearchResult(keyword)
       sessionStorage.setItem("keyword",keyword);
       navigate(Private_Routes.RESULTADOS)
@@ -35,7 +38,7 @@ function Buscador() {
 
   return (
     <div>
-      <form   className="d-flex" onSubmit={submmitHandler}>
+      <form className="d-flex" onSubmit={submmitHandler}>
         <div>
           <input
             onChange={handleChangeInput}

@@ -15,9 +15,9 @@ function Resultados() {
         {provider.moviesFound.results?.length > 1 ? (
           <Listado movies={provider.moviesFound.results} />
          
-        ) : (
-          <NoResults />
-        )}
+        ) : 
+          <NoResults/>
+        }
           <Paginado setPage={provider.setPage} page={provider.page}/>
       </div>
     </div>
