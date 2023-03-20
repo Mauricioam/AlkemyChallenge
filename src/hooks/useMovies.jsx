@@ -25,7 +25,7 @@ export function useMovies(page) {
 
   const getSearchResult = async (keyword) => {
     try {
-      const searchedMovie = await getSearchMovies(keyword);
+      const searchedMovie = await getSearchMovies(keyword,page);
       setMoviesFound(searchedMovie);
     } catch (error) {
       swal("No pudimos encontrar lo que buscabas, intenta nuevamente");

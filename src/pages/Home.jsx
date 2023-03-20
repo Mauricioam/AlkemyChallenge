@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { SearchContext } from '../App';
 import Listado from '../components/Listado';
 import Loader from '../components/Loader';
 import Paginado from '../components/Paginado';
-import { useMovies } from '../hooks/useMovies';
 
 
 

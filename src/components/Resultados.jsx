@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import Paginado from "./Paginado";
 import { SearchContext } from "../App";
 import Listado from "./Listado";
@@ -14,10 +14,11 @@ function Resultados() {
       <div className="row my-5" style={{ minHeight: "80vh", width: "100%" }}>
         {provider.moviesFound.results?.length > 1 ? (
           <Listado movies={provider.moviesFound.results} />
+         
         ) : (
           <NoResults />
         )}
-          <Paginado />
+          <Paginado setPage={provider.setPage} page={provider.page}/>
       </div>
     </div>
   );

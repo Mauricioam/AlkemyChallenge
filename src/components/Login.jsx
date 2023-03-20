@@ -1,13 +1,13 @@
 
 import swal from "@sweetalert/with-react";
-import { useNavigate , Navigate } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import "../css/components/Login/login.css";
 
 
 function Login() {
   const navigate = useNavigate();
 
-  let token = sessionStorage.getItem("token");
+  
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -33,11 +33,7 @@ function Login() {
    
      /* harcodeo sino no funciona en el deploy */
   
-        swal(<h4 className="text-white">Ingresaste correctamente</h4>,{
-          className:"sweet-alert",
-          button:false,
-          timer:3000
-        });
+     
         const tokenRecibido = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJjaGFsbGVuZ2VAYWxrZW15Lm9yZyIsImlhdCI6MTUxNjIzOTAyMn0.ilhFPrG0y7olRHifbjvcMOlH7q2YwlegT0f4aSbryBE";
         sessionStorage.setItem("token", tokenRecibido);
         navigate("/listado");
@@ -46,7 +42,7 @@ function Login() {
 
   return (
     <>
-    {token && <Navigate to={"/listado"} /> }
+
       
       <div className="login-container  d-flex justify-content-md-end justify-content-center  align-items-center " >
         <div className="login-card border border-dark rounded  p-3">

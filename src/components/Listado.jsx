@@ -9,7 +9,7 @@ import Card from "./Card";
         <div className="row py-5 d-flex justify-content-center" style={{
           width:"100%"
         }}>
-          { movies.map((movie) => {
+          { movies?.map((movie) => {
             return (
              <Card
              key={movie.id}

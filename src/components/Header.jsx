@@ -2,26 +2,28 @@ import { Link } from "react-router-dom";
 import Buscador from "./Buscador";
 import Logout from "./Logout";
 import { Private_Routes } from "../routes";
-import { useLocation } from 'react-router-dom';
 
-const headerItems = [{
-  title:"AlkeFlix",
-  linkTo:"/",
-  style:"main-link btn-link pe-sm-2   fw-bold fz-5 me-md-5"
-},
-{
-  title:"Inicio",
-  linkTo:"/",
-  style:"secondary-link"
-},
-{
-  title:"Favoritos",
-  linkTo:Private_Routes.FAVORITOS,
-  style:"secondary-link"
-}]
 
 
 function Header() {
+
+  
+  const headerItems = [{
+    title:"AlkeFlix",
+    linkTo:Private_Routes.LISTADO,
+    style:"main-link btn-link pe-sm-2   fw-bold fz-5 me-md-5"
+  },
+  {
+    title:"Inicio",
+    linkTo:Private_Routes.LISTADO,
+    style:"secondary-link"
+  },
+  {
+    title:"Favoritos",
+    linkTo:Private_Routes.FAVORITOS,
+    style:"secondary-link"
+  }]
+  
 
   return (
     <>
@@ -34,6 +36,7 @@ function Header() {
               {headerItems.map((item,idx)=>(
                 <li key={idx}>
                   <Link
+
                   to={item.linkTo}
                   className={item.style}
                   >
